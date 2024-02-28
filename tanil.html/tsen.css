@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    min-height: 10vh;
+    width:100%;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links{
+    flex: 1;
+    text-align:right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading{
+    margin-top: 3%;
+    margin-left: 7%;
+    margin-bottom:1%;
+}
+.heading h1{
+font-family: 'Poppins', sans-serif;
+font-size: 38px;
+color:#821097;
+}
+
+
+
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 0 35px;
+    background-color: #fff;
+}
+.wrapper{
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+}
+.wrapper i{
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    text-align: center;
+    line-height:50px;
+    border-radius: 50%;
+    cursor:pointer;
+    position: absolute;
+    top: 50%;
+    font-size:1.25rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+}
+.wrapper i:first-child{
+    left: -22px;
+}
+.wrapper i:last-child{
+    right: -22px;
+}
+.wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap:16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar{
+    display: none;
+}
+.carousel :where(.card, .img){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.carousel.no-transition{
+    scroll-behavior: auto;
+}
+.carousel .dragging{
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.carousel.dragging .card{
+    cursor: grab;
+    user-select: none;
+}
+.carousel .card{
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    padding-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card .img{
+    background:#d923f9;
+    width:148px;
+    height: 148px;
+    border-radius: 50%;
+}
+.card .img img{
+    width:140px;
+    height: 140px;
+    object-fit:cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+.card h2{
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 30px 0 5px;
+}
+.card span{
+    color: #6a6d78;
+    font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel{
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel{
+        grid-auto-columns: 100%;
+    }
+}
+
+
+
+
+
+
+.cta{
+    margin:100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgb(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(tomujin\ tugsult.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border:1px solid #ffffff;
+    background: #a900c6;
+    transition: 1s;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.icons .fa{
+    color: #a900c6;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+.fa-heart-o{
+    color: #a900c6;
+}
+
